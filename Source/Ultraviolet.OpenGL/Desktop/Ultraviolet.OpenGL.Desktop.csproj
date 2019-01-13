@@ -128,6 +128,10 @@
     <EmbeddedResource Include="Resources\SpriteBatchEffectES.frag" />
     <EmbeddedResource Include="Resources\SpriteBatchEffectES.vert" />
     <EmbeddedResource Include="Resources\SrgbConversion.verth" />
+    <EmbeddedResource Include="Resources\PbrMetallicRoughnessEffect.frag" />
+    <EmbeddedResource Include="Resources\PbrMetallicRoughnessEffectES.frag" />
+    <EmbeddedResource Include="Resources\PbrMetallicRoughnessEffectES.vert" />
+    <EmbeddedResource Include="Resources\PbrMetallicRoughnessEffect.vert" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\..\Version.tt">

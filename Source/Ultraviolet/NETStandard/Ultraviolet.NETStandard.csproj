@@ -60,6 +60,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="glTF2Loader" Version="1.0.0" />
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>

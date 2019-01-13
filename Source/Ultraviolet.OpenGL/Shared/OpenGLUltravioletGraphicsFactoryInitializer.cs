@@ -1,8 +1,10 @@
 ﻿using Ultraviolet.Graphics;
 using Ultraviolet.Graphics.Graphics2D;
+using Ultraviolet.Graphics.Graphics3D;
 using Ultraviolet.OpenGL.Bindings;
 using Ultraviolet.OpenGL.Graphics;
 using Ultraviolet.OpenGL.Graphics.Graphics2D;
+using Ultraviolet.OpenGL.Graphics.Graphics3D;
 using Ultraviolet.Platform;
 using Ultraviolet.SDL2.Platform;
 
@@ -35,6 +37,7 @@ namespace Ultraviolet.OpenGL
             factory.SetFactoryMethod<BasicEffectFactory>((uv) => new OpenGLBasicEffect(uv));
             factory.SetFactoryMethod<SpriteBatchEffectFactory>((uv) => new OpenGLSpriteBatchEffect(uv));
             factory.SetFactoryMethod<BlurEffectFactory>((uv) => new OpenGLBlurEffect(uv));
+            factory.SetFactoryMethod<PbrMetallicRoughnessEffectFactory>((uv) => new OpenGLPbrMetallicRoughnessEffect(uv));
 
             // BlendState
             var blendStateOpaque = OpenGLBlendState.CreateOpaque(owner);

@@ -43,6 +43,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\IOpenGLDynamicTexture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\IOpenGLResource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\OpenGLAttribCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Graphics\Graphics3D\OpenGLPbrMetallicRoughnessEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\OpenGLBasicEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\OpenGLBlendState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\OpenGLBlurEffect.cs" />
@@ -114,5 +115,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Schema\Ultraviolet\OpenGL\Graphics\Effect.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Graphics\Graphics3D\" />
   </ItemGroup>
 </Project>
