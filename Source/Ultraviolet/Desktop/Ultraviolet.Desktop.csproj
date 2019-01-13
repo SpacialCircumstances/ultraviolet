@@ -67,9 +67,6 @@
     <DelaySign>true</DelaySign>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="glTFLoader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\glTF2Loader.1.0.0\lib\net452\glTFLoader.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -102,6 +99,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Ultraviolet.Content.glTF2\Desktop\Ultraviolet.Content.glTF2.Desktop.csproj">
+      <Project>{7329b0ec-3530-46e8-9b9d-f48ab0b0cfb2}</Project>
+      <Name>Ultraviolet.Content.glTF2.Desktop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Ultraviolet.Core\Desktop\Ultraviolet.Core.Desktop.csproj">
       <Project>{7DA6158B-A0B9-4100-904E-22FD86949608}</Project>
       <Name>Ultraviolet.Core.Desktop</Name>

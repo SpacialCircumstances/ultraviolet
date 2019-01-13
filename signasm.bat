@@ -19,6 +19,7 @@ IF "%1"=="test_nucleus" GOTO test_nucleus
 IF "%1"=="test_ultraviolet" GOTO test_ultraviolet
 IF "%1"=="test_uvss" GOTO test_uvss
 
+sn.exe -R "Ultraviolet.Content.glTF2" "%TLSN%"
 sn.exe -R "Ultraviolet.Core.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.Core.Design.dll" "%TLSN%"
 sn.exe -R "Ultraviolet.OpenGL.Bindings.dll" "%TLSN%" 
@@ -45,6 +46,7 @@ sn.exe -R "uvassetlist.exe" "%TLSN%"
 GOTO :eof
 
 :sign_android
+sn.exe -R "Ultraviolet.Content.glTF2" "%TLSN%"
 sn.exe -R "Ultraviolet.Core.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.OpenGL.Bindings.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.dll" "%TLSN%"
@@ -62,6 +64,7 @@ sn.exe -R "Ultraviolet.Shims.Android.dll" "%TLSN%"
 GOTO :eof
 
 :sign_ios
+sn.exe -R "Ultraviolet.Content.glTF2" "%TLSN%"
 sn.exe -R "Ultraviolet.Core.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.OpenGL.Bindings.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.dll" "%TLSN%"
@@ -79,6 +82,7 @@ sn.exe -R "Ultraviolet.Shims.iOS.dll" "%TLSN%"
 GOTO :eof
 
 :sign_netcore
+sn.exe -R "Ultraviolet.Content.glTF2" "%TLSN%"
 sn.exe -R "Ultraviolet.dll" "%TLSN%"
 sn.exe -R "Ultraviolet.Core.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.OpenGL.dll" "%TLSN%"
@@ -96,6 +100,7 @@ sn.exe -R "Ultraviolet.Tooling.dll" "%TLSN%"
 GOTO :eof
 
 :sign_uvdebug
+sn.exe -R "Ultraviolet.Content.glTF2" "%TLSN%"
 sn.exe -R "Ultraviolet.Core.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.OpenGL.Bindings.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.dll" "%TLSN%"
@@ -116,6 +121,7 @@ sn.exe -R "Ultraviolet.Core.dll" "%TLSN%"
 GOTO :eof
 
 :test_ultraviolet
+sn.exe -R "Ultraviolet.Content.glTF2" "%TLSN%"
 sn.exe -R "Ultraviolet.Core.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.OpenGL.Bindings.dll" "%TLSN%" 
 sn.exe -R "Ultraviolet.dll" "%TLSN%"

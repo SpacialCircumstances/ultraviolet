@@ -4,26 +4,20 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Configurations>Debug;Release;Signed</Configurations>
-    <AssemblyName>Ultraviolet.ImGuiViewProvider</AssemblyName>
-    <RootNamespace>Ultraviolet.ImGuiViewProvider</RootNamespace>
+    <AssemblyName>Ultraviolet.Content.glTF2</AssemblyName>
+    <RootNamespace>Ultraviolet.Content.glTF2</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Debug\netstandard2.0\Ultraviolet.ImGuiViewProvider.xml</DocumentationFile>
     <DefineConstants>TRACE;NETSTANDARD;DEBUG</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Release\netstandard2.0\Ultraviolet.ImGuiViewProvider.xml</DocumentationFile>
     <DefineConstants>TRACE;NETSTANDARD</DefineConstants>
     <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Signed|AnyCPU'">
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Signed\netstandard2.0\Ultraviolet.ImGuiViewProvider.xml</DocumentationFile>
     <DefineConstants>TRACE;NETSTANDARD;SIGNED</DefineConstants>
     <Optimize>true</Optimize>
   </PropertyGroup>
@@ -34,7 +28,7 @@
     <AssemblyOriginatorKeyFile>..\..\Ultraviolet.Public.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
-  <Import Project="..\Shared\Ultraviolet.ImGuiViewProvider.projitems" Label="Shared" />
+  <Import Project="..\Shared\Ultraviolet.Content.glTF2.projitems" Label="Shared" />
 
   <ItemGroup>
     <None Include="..\..\Version.tt" Link="Properties\Version.tt">
@@ -47,19 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="..\Desktop\Resources\Strings.xml" Link="Resources\Strings.xml">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Ultraviolet.Core\NETStandard\Ultraviolet.Core.NETStandard.csproj" />
-    <ProjectReference Include="..\..\Ultraviolet.ImGuiViewProvider.Bindings\NETStandard\Ultraviolet.ImGuiViewProvider.Bindings.NETStandard.csproj" />
-    <ProjectReference Include="..\..\Ultraviolet\NETStandard\Ultraviolet.NETStandard.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
 
 </Project>

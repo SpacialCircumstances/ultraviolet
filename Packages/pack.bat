@@ -8,6 +8,10 @@
 
 @echo Creating NuGet packages for Ultraviolet Framework %UV_VERSION%...
 
+powershell -Command "(gc Ultraviolet.Content.glTF2.nuspe_) -replace 'UV_VERSION', '%UV_VERSION%' | sc Ultraviolet.Content.glTF2.nuspec"
+nuget pack Ultraviolet.Content.glTF2.nuspec -Symbols
+@if %errorlevel% neq 0 @exit /b %errorlevel%
+
 powershell -Command "(gc Ultraviolet.OpenGL.Bindings.nuspe_) -replace 'UV_VERSION', '%UV_VERSION%' | sc Ultraviolet.OpenGL.Bindings.nuspec"
 nuget pack Ultraviolet.OpenGL.Bindings.nuspec -Symbols
 @if %errorlevel% neq 0 @exit /b %errorlevel%
