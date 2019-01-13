@@ -80,6 +80,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Numerics" />
+    <Reference Include="glTFLoader">
+      <HintPath>..\..\packages\glTF2Loader.1.0.0\lib\netstandard1.3\glTFLoader.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
