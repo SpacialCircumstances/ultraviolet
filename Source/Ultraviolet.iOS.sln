@@ -68,6 +68,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Ultraviolet.ImGuiViewProvid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ultraviolet.ImGuiViewProvider.Bindings.iOS", "Ultraviolet.ImGuiViewProvider.Bindings\iOS\Ultraviolet.ImGuiViewProvider.Bindings.iOS.csproj", "{2A0392FD-D427-4C6D-92F5-13F5B324891A}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Ultraviolet.Content.glTF2", "Ultraviolet.Content.glTF2\Shared\Ultraviolet.Content.glTF2.shproj", "{848A058C-8C45-4E08-98D3-CB7B826454FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ultraviolet.Content.glTF2.iOS", "Ultraviolet.Content.glTF2\iOS\Ultraviolet.Content.glTF2.iOS.csproj", "{B1ACEDCB-9829-4976-AF0F-5C3144F24548}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		UvDebug\Shared\UvDebug.projitems*{00dfa15e-9cb3-4ebb-91c1-4837335b083c}*SharedItemsImports = 4
@@ -322,6 +326,18 @@ Global
 		{2A0392FD-D427-4C6D-92F5-13F5B324891A}.Signed|iPhone.Build.0 = Signed|Any CPU
 		{2A0392FD-D427-4C6D-92F5-13F5B324891A}.Signed|iPhoneSimulator.ActiveCfg = Signed|Any CPU
 		{2A0392FD-D427-4C6D-92F5-13F5B324891A}.Signed|iPhoneSimulator.Build.0 = Signed|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Release|iPhone.Build.0 = Release|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Signed|iPhone.ActiveCfg = Signed|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Signed|iPhone.Build.0 = Signed|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Signed|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B1ACEDCB-9829-4976-AF0F-5C3144F24548}.Signed|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
