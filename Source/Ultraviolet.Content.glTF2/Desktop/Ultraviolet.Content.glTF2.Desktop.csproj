@@ -7,8 +7,8 @@
     <ProjectGuid>{7329B0EC-3530-46E8-9B9D-F48AB0B0CFB2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ultraviolet.Content.glTF2.Desktop</RootNamespace>
-    <AssemblyName>Ultraviolet.Content.glTF2.Desktop</AssemblyName>
+    <RootNamespace>Ultraviolet.Content.glTF2</RootNamespace>
+    <AssemblyName>Ultraviolet.Content.glTF2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
