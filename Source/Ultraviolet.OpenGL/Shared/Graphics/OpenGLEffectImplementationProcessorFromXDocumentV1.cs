@@ -121,8 +121,8 @@ namespace Ultraviolet.OpenGL.Graphics
                     var fragShaderSource = ShaderSource.ProcessExterns(manager.Load<ShaderSource>(fragPath), Externs);
                     var fragShader = new OpenGLFragmentShader(manager.Ultraviolet, new[] { fragShaderSource });
 
-                    var programs = new[] { new OpenGLShaderProgram(manager.Ultraviolet, vertShader, fragShader, false) };
-                    passes.Add(new OpenGLEffectPass(manager.Ultraviolet, passName, programs));
+                    var program = new OpenGLShaderProgram(manager.Ultraviolet, vertShader, fragShader, false);
+                    passes.Add(new OpenGLEffectPass(manager.Ultraviolet, passName, program));
                 }
 
                 techniques.Add(new OpenGLEffectTechnique(manager.Ultraviolet, techniqueName, passes));
@@ -172,8 +172,8 @@ namespace Ultraviolet.OpenGL.Graphics
                     var fragShaderSource = ShaderSource.ProcessExterns(manager.Load<ShaderSource>(fragPath), Externs);
                     var fragShader = new OpenGLFragmentShader(manager.Ultraviolet, new[] { fragShaderSource });
 
-                    var programs = new[] { new OpenGLShaderProgram(manager.Ultraviolet, vertShader, fragShader, false) };
-                    techniquePasses.Add(new OpenGLEffectPass(manager.Ultraviolet, passName, programs));
+                    var program = new OpenGLShaderProgram(manager.Ultraviolet, vertShader, fragShader, false);
+                    techniquePasses.Add(new OpenGLEffectPass(manager.Ultraviolet, passName, program));
                 }
 
                 techniques.Add(new OpenGLEffectTechnique(manager.Ultraviolet, techniqueName, techniquePasses));

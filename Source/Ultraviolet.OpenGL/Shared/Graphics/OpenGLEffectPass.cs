@@ -15,23 +15,22 @@ namespace Ultraviolet.OpenGL.Graphics
         /// </summary>
         /// <param name="uv">The Ultraviolet context.</param>
         /// <param name="name">The effect pass' name.</param>
-        /// <param name="programs">The effect pass' collection of shader programs.</param>
-        public OpenGLEffectPass(UltravioletContext uv, String name, ICollection<OpenGLShaderProgram> programs)
+        /// <param name="program">The effect pass' shader program.</param>
+        public OpenGLEffectPass(UltravioletContext uv, String name, OpenGLShaderProgram program)
             : base(uv)
         {
-            Contract.RequireNotEmpty(programs, nameof(programs));
+            Contract.Require(program, nameof(program));
 
             this.Name = name ?? String.Empty;
-            this.programs = new OpenGLShaderProgramCollection(programs);
+            this.Program = program;
         }
 
         /// <inheritdoc/>
         public override void Apply()
         {
-            var program = programs[programIndex];
-            OpenGLState.UseProgram(program);
+            OpenGLState.UseProgram(Program);
 
-            foreach (var uniform in program.Uniforms)
+            foreach (var uniform in Program.Uniforms)
             {
                 uniform.Apply();
             }
@@ -41,31 +40,8 @@ namespace Ultraviolet.OpenGL.Graphics
         public override String Name { get; }
 
         /// <summary>
-        /// Gets or sets the effect pass' current program index.
+        /// Gets the effect pass' shader program.
         /// </summary>
-        public Int32 ProgramIndex
-        {
-            get { return programIndex; }
-            set
-            {
-                Contract.EnsureRange(value >= 0 && value < ProgramCount, nameof(value));
-
-                programIndex = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the effect pass' program count.
-        /// </summary>
-        public Int32 ProgramCount => programs.Count;
-
-        /// <summary>
-        /// Gets the effect pass' collection of shader programs.
-        /// </summary>
-        public OpenGLShaderProgramCollection Programs => programs;
-
-        // Property values.
-        private readonly OpenGLShaderProgramCollection programs;
-        private Int32 programIndex;
+        public OpenGLShaderProgram Program { get; }
     }
 }

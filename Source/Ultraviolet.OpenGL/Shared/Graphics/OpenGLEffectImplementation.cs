@@ -91,8 +91,7 @@ namespace Ultraviolet.OpenGL.Graphics
             var uniforms =
                 from tech in techniques
                 from pass in tech.Passes
-                from prog in ((OpenGLEffectPass)pass).Programs
-                from unif in prog.Uniforms
+                from unif in ((OpenGLEffectPass)pass).Program.Uniforms
                 let name = unif.Name
                 let nameSanitized = name.EndsWith("[0]") ? name.Substring(0, name.Length - "[0]".Length) : name
                 where parameters == null || parameters.Count == 0 || parameters.Contains(nameSanitized)

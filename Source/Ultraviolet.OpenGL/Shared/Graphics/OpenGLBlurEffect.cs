@@ -54,7 +54,7 @@ namespace Ultraviolet.OpenGL.Graphics.Graphics2D
         /// </summary>
         private void UpdateRadius()
         {
-            var programIndex = UnrolledFragmentShaderCount;
+            var index = UnrolledFragmentShaderCount;
 
             var nearestUnrolledRadius = (Int32)Radius;
 
@@ -70,14 +70,14 @@ namespace Ultraviolet.OpenGL.Graphics.Graphics2D
             var useUnrolledShader = gl.IsGLES2 || (Int32)Radius == nearestUnrolledRadius;
             if (useUnrolledShader)
             {
-                programIndex = (nearestUnrolledRadius - 1) / 2;
+                index = (nearestUnrolledRadius - 1) / 2;
             }
             else
             {
                 Parameters["Radius"].SetValue(Radius);
             }
 
-            ((OpenGLEffectPass)CurrentTechnique.Passes[0]).ProgramIndex = programIndex;
+            CurrentTechnique = Techniques[index];
         }
 
         /// <summary>
@@ -109,19 +109,22 @@ namespace Ultraviolet.OpenGL.Graphics.Graphics2D
         {
             Contract.Require(uv, nameof(uv));
 
-            var programs = new[] 
-            { 
-                new OpenGLShaderProgram(uv, vertShader, fragShader_Radius1, false),
-                new OpenGLShaderProgram(uv, vertShader, fragShader_Radius3, false),
-                new OpenGLShaderProgram(uv, vertShader, fragShader_Radius5, false),
-                new OpenGLShaderProgram(uv, vertShader, fragShader_Radius7, false),
-                new OpenGLShaderProgram(uv, vertShader, fragShader_Radius9, false),
-                IsArbitaryRadiusBlurAvailable ? new OpenGLShaderProgram(uv, vertShader, fragShader, false) : null,
+            var techniques = new[]
+            {
+                new OpenGLEffectTechnique(uv, "Radius1", 
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShader, fragShader_Radius1, false)) }),
+                new OpenGLEffectTechnique(uv, "Radius3",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShader, fragShader_Radius3, false)) }),
+                new OpenGLEffectTechnique(uv, "Radius5",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShader, fragShader_Radius5, false)) }),
+                new OpenGLEffectTechnique(uv, "Radius7",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShader, fragShader_Radius7, false)) }),
+                new OpenGLEffectTechnique(uv, "Radius9",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShader, fragShader_Radius9, false)) }),
+                IsArbitaryRadiusBlurAvailable ? new OpenGLEffectTechnique(uv, "RadiusArbitrary",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShader, fragShader, false)) }) : null,
             };
-
-            var passes     = new[] { new OpenGLEffectPass(uv, null, programs.Where(x => x != null).ToArray()) };
-            var techniques = new[] { new OpenGLEffectTechnique(uv, null, passes) };
-            return new OpenGLEffectImplementation(uv, techniques);
+            return new OpenGLEffectImplementation(uv, techniques.Where(x => x != null).ToArray());
         }
 
         // Unrolled fragment shaders

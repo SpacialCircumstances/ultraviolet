@@ -18,16 +18,10 @@ namespace Ultraviolet.OpenGL.Graphics.Graphics2D
         }
 
         /// <inheritdoc/>
-        protected override void OnVertexColorEnabledChanged()
-        {
-            UpdateProgramIndex();
-        }
+        protected override void OnVertexColorEnabledChanged() => UpdateCurrentTechnique();
 
         /// <inheritdoc/>
-        protected override void OnTextureEnabledChanged()
-        {
-            UpdateProgramIndex();
-        }
+        protected override void OnTextureEnabledChanged() => UpdateCurrentTechnique();
 
         /// <summary>
         /// Creates the effect implementation.
@@ -38,23 +32,24 @@ namespace Ultraviolet.OpenGL.Graphics.Graphics2D
         {
             Contract.Require(uv, nameof(uv));
 
-            var programs = new[] 
-            { 
-                new OpenGLShaderProgram(uv, vertShader, fragShader, false),
-                new OpenGLShaderProgram(uv, vertShaderColored, fragShaderColored, false),
-                new OpenGLShaderProgram(uv, vertShaderTextured, fragShaderTextured, false),
-                new OpenGLShaderProgram(uv, vertShaderColoredTextured, fragShaderColoredTextured, false),
+            var techniques = new[]
+            {
+                new OpenGLEffectTechnique(uv, "Position",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShader, fragShader, false)) }),
+                new OpenGLEffectTechnique(uv, "PositionColor",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShaderColored, fragShaderColored, false)) }),
+                new OpenGLEffectTechnique(uv, "PositionTexture",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShaderTextured, fragShaderTextured, false)) }),
+                new OpenGLEffectTechnique(uv, "PositionColorTexture",
+                    new[] { new OpenGLEffectPass(uv, null, new OpenGLShaderProgram(uv, vertShaderColoredTextured, fragShaderColoredTextured, false)) }),
             };
-
-            var passes     = new[] { new OpenGLEffectPass(uv, null, programs) };
-            var techniques = new[] { new OpenGLEffectTechnique(uv, null, passes) };
             return new OpenGLEffectImplementation(uv, techniques);
         }
 
         /// <summary>
-        /// Changes the effect's program index based on its current settings.
+        /// Changes the current technique for this effect based on its property values.
         /// </summary>
-        private void UpdateProgramIndex()
+        private void UpdateCurrentTechnique()
         {
             var index = 0;
 
@@ -68,7 +63,7 @@ namespace Ultraviolet.OpenGL.Graphics.Graphics2D
                 index += 1;
             }
 
-            ((OpenGLEffectPass)CurrentTechnique.Passes[0]).ProgramIndex = index;
+            CurrentTechnique = Techniques[index];
         }
 
         // Shaders - basic

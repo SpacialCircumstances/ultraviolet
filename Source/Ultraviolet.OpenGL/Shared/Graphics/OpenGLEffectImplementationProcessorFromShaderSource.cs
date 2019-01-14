@@ -40,7 +40,7 @@ namespace Ultraviolet.OpenGL.Graphics
                 parameters.Add(hint);
 
             var program = new OpenGLShaderProgram(manager.Ultraviolet, vertShader, fragShader, false);
-            var pass = new OpenGLEffectPass(manager.Ultraviolet, "Default", new[] { program });
+            var pass = new OpenGLEffectPass(manager.Ultraviolet, "Default", program);
             var technique = new OpenGLEffectTechnique(manager.Ultraviolet, "Default", new[] { pass });
 
             return new OpenGLEffectImplementation(manager.Ultraviolet, new[] { technique }, parameters);
