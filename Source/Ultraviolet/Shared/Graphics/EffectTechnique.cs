@@ -33,5 +33,10 @@ namespace Ultraviolet.Graphics
         {
             get;
         }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Ultraviolet.Graphics.Effect"/> which owns this technique.
+        /// </summary>
+        internal Effect Effect { get; set; }
     }
 }

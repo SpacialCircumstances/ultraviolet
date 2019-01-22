@@ -17,7 +17,20 @@ namespace Ultraviolet.Graphics
         {
             Contract.Require(impl, nameof(impl));
 
+            if (impl.Effect != null)
+                throw new ArgumentException(nameof(impl));
+
             this.impl = impl;
+            this.impl.Effect = this;
+
+            foreach (var technique in this.impl.Techniques)
+            {
+                technique.Effect = this;
+                foreach (var pass in technique.Passes)
+                {
+                    pass.Effect = this;
+                }
+            }
         }
 
         /// <summary>
@@ -66,6 +79,14 @@ namespace Ultraviolet.Graphics
             }
 
             base.Dispose(disposing);
+        }
+
+        /// <summary>
+        /// Called immediately before uploading the effect parameters to the graphics device.
+        /// </summary>
+        protected internal virtual void OnApply()
+        {
+
         }
 
         // The effect's implementation.

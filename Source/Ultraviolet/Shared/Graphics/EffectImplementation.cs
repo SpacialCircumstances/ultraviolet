@@ -47,5 +47,10 @@ namespace Ultraviolet.Graphics
             get;
             set;
         }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Effect"/> which owns this implementation.
+        /// </summary>
+        internal Effect Effect { get; set; }
     }
 }

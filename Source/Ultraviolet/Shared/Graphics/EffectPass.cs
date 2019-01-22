@@ -20,7 +20,10 @@ namespace Ultraviolet.Graphics
         /// <summary>
         /// Applies the effect pass state to the device.
         /// </summary>
-        public abstract void Apply();
+        public virtual void Apply()
+        {
+            Effect?.OnApply();
+        }
 
         /// <summary>
         /// Gets the effect pass's name.
@@ -29,5 +32,10 @@ namespace Ultraviolet.Graphics
         {
             get;
         }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Ultraviolet.Graphics.Effect"/> which owns this pass.
+        /// </summary>
+        internal Effect Effect { get; set; }
     }
 }

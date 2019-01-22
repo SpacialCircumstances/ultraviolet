@@ -30,6 +30,8 @@ namespace Ultraviolet.OpenGL.Graphics
         {
             OpenGLState.UseProgram(Program);
 
+            base.Apply();
+
             foreach (var uniform in Program.Uniforms)
             {
                 uniform.Apply();
