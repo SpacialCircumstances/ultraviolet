@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ENABLE_PROFILING;IMGUI</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ENABLE_PROFILING</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -375,10 +375,6 @@
     </None>
     <None Include="..\..\..\Dependencies\FreeType2\x86\win32nt\libpng16.dll">
       <Link>x86\win32nt\libpng16.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\UI\Screens\ImGuiScreen\ImGuiScreen.xml">
-      <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="..\..\..\Dependencies\ImGui\x64\osx\libcimgui.dylib">
