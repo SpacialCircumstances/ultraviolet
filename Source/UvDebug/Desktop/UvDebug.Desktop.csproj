@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ENABLE_PROFILING;IMGUI</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ENABLE_PROFILING</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -250,12 +250,6 @@
       <Link>x86\win32nt\SDL2.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Cursors\Cursors.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\Cursors\CursorsImage.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Content\Fonts\SegoeUI.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -377,10 +371,6 @@
       <Link>x86\win32nt\libpng16.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\UI\Screens\ImGuiScreen\ImGuiScreen.xml">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <Content Include="..\..\..\Dependencies\ImGui\x64\osx\libcimgui.dylib">
       <Link>x64/osx/libcimgui.dylib</Link>
     </Content>
@@ -402,7 +392,10 @@
     </Content>
     <Content Include="uv.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Cursors\" />
+    <Folder Include="Content\UI\Screens\ImGuiScreen\" />
+  </ItemGroup>
   <Import Project="..\Shared\UvDebug.projitems" Label="Shared" />
   <PropertyGroup>
     <RunCreateSymbolicLinksToFreeType2Dependencies>false</RunCreateSymbolicLinksToFreeType2Dependencies>

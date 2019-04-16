@@ -6,7 +6,6 @@
 
 View 
 { 
-    cursor: #Global:Cursors:Cursors Normal;
     blank-image: #Global:Textures:DefaultUI 137 459 14 23; 
 }
 
@@ -332,7 +331,6 @@ PasswordBox!
     TextBox! >>     TextEditor!, 
 PasswordBox! >> PasswordEditor!
 {
-    cursor: #Global:Cursors:Cursors IBeam;
     caret-insert-color: #ffffffff;
     caret-insert-topmost: true;
     caret-overwrite-color: #ffffffff;

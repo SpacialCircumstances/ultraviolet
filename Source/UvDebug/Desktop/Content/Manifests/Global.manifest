@@ -22,6 +22,5 @@
     <Asset Name="InterfaceIcons">InterfaceIcons</Asset>
   </ContentGroup>
   <ContentGroup Name="Cursors" Directory="Cursors" Type="Ultraviolet.CursorCollection">
-    <Asset Name="Cursors">Cursors</Asset>
   </ContentGroup>
 </ContentManifest>
